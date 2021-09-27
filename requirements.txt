@@ -44,7 +44,6 @@ simplejson==3.16.0
 six==1.14.0
 systemd-python==234
 tzlocal==2.1
-ubuntu-advantage-tools==27.2
 ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1
