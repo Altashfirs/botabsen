@@ -36,12 +36,12 @@ def absen():
     time.sleep(0.5)
     driver.find_element_by_css_selector("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewNavigationNavControls > div > div.freebirdFormviewerViewNavigationLeftButtons > div.appsMaterialWizButtonEl.appsMaterialWizButtonPaperbuttonEl.appsMaterialWizButtonPaperbuttonFilled.freebirdFormviewerViewNavigationSubmitButton.freebirdThemedFilledButtonM2 > span").click()
 
-
-while True:
-#                     v----------------- on minute 0, so every full hour
-#                       v--------------- on hours 9 till 16
-#                            v v-------- every day in month and every month
-#                                v------ on weekdays monday till friday
-    if pycron.is_now('30 7 * * mon-fri'):
-        absen()
-    time.sleep(60)
+absen()
+# while True:
+# #                     v----------------- on minute 0, so every full hour
+# #                       v--------------- on hours 9 till 16
+# #                            v v-------- every day in month and every month
+# #                                v------ on weekdays monday till friday
+#     if pycron.is_now('30 7 * * mon-fri'):
+#         absen()
+#     time.sleep(60)
