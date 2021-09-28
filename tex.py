@@ -35,7 +35,9 @@ def absen():
     element.click()
 
     time.sleep(1)
-    driver.find_element_by_css_selector("#i5 > div.appsMaterialWizToggleRadiogroupRadioButtonContainer > div").click()
+    nama = driver.find_element_by_xpath("//span[text()='e']")
+    time.sleep(1)
+    nama.click()
     time.sleep(0.5)
     driver.find_element_by_css_selector("#mG61Hd > div.freebirdFormviewerViewFormCard.exportFormCard > div > div.freebirdFormviewerViewNavigationNavControls > div > div.freebirdFormviewerViewNavigationLeftButtons > div.appsMaterialWizButtonEl.appsMaterialWizButtonPaperbuttonEl.appsMaterialWizButtonPaperbuttonFilled.freebirdFormviewerViewNavigationSubmitButton.freebirdThemedFilledButtonM2 > span").click()
 
