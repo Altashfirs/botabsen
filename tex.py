@@ -8,20 +8,23 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 import os
 
-def absen():
-    today_date = datetime.today().strftime('%Y-%m-%d')
-    driver = webdriver.ChromeOptions()
-    driver.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-    driver.add_argument("--headless")
-    driver.add_argument("--disable-dev-shm-usage")
-    driver.add_argument("--no-sandbox")
+today_date = datetime.today().strftime('%Y-%m-%d')
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
-    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome.options)
-    wait = WebDriverWait(driver, 30)
+wait = WebDriverWait(driver, 30)
+
+def absen():
+    
+
 
     driver.get("https://forms.gle/VUwbshGuXxDb7NRbA")
     time.sleep(1)
-    date= wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input.quantumWizTextinputPaperinputInput")))
+    date = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input.quantumWizTextinputPaperinputInput")))
     driver.execute_script(f"arguments[0].setAttribute('value', '{today_date}')", date)
     element =driver.find_element_by_xpath("//span[text()='Berikutnya']")
 
